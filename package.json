@@ -2,8 +2,12 @@
   "name": "sanchez-records",
   "version": "1.0.0",
   "description": "React web application about Rick and Morty",
-  "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "open": "open dist/index.html",
+    "build": "webpack",
+    "start:dev": "webpack-dev-server",
+    "format": "prettier \"src/**/*.{js,html,jsx}\" --write"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tPhume/sanchez-records.git"
