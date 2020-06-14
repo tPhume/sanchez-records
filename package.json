@@ -1,0 +1,17 @@
+{
+  "name": "sanchez-records",
+  "version": "1.0.0",
+  "description": "React web application about Rick and Morty",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tPhume/sanchez-records.git"
+  },
+  "author": "tphume",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tPhume/sanchez-records/issues"
+  },
+  "homepage": "https://github.com/tPhume/sanchez-records#readme"
+}
