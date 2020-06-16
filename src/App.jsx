@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-import "./app.css";
+import SideBar from "./SideBar/SideBar";
+
+import "./App.css";
 
 function App() {
   return (
-    <h1 className="text-lg text-semibold text-blue-500">Sanchez Records</h1>
+    <main className="min-h-screen bg-light">
+      <SideBar>
+        <h1 className="text-2xl">Sanchez Records</h1>
+      </SideBar>
+    </main>
   );
 }
 
