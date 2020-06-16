@@ -2,7 +2,7 @@ import React from "react";
 import "./SideBar.css";
 
 function SideBar({ children }) {
-  return <section>{children}</section>;
+  return <section className="flex bg-cteal h-screen w-64">{children}</section>;
 }
 
 export default SideBar;

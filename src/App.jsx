@@ -7,10 +7,9 @@ import "./App.css";
 
 function App() {
   return (
-    <main className="min-h-screen bg-light">
-      <SideBar>
-        <h1 className="text-2xl">Sanchez Records</h1>
-      </SideBar>
+    <main className="flex h-screen w-screen bg-clight">
+      <SideBar />
+      <section className="flex bg-clight" />
     </main>
   );
 }
