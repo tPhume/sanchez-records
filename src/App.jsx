@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ReactDom from "react-dom";
 
-import SideBar from "./SideBar/SideBar";
-import SideBarItem from "./SideBarItem/SideBarItem";
+import SideBar from "./components/SideBar/SideBar";
+import SideBarItem from "./components/SideBarItem/SideBarItem";
 
 import "./App.css";
 
