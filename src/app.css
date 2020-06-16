@@ -4,4 +4,9 @@
 
 @tailwind base;
 @tailwind components;
+
+* {
+  @apply font-mono;
+}
+
 @tailwind utilities;
