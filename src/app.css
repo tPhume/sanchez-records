@@ -10,7 +10,7 @@
 }
 
 .sidebar-item {
-  @apply flex w-56 h-10 items-center justify-start mt-2
+  @apply flex w-56 h-10 items-center justify-start mt-2 text-clight text-lg font-semibold p-4;
 }
 
 @tailwind utilities;

@@ -4,19 +4,17 @@ function SideBarItem({ name, current, action }) {
   const actionElement = () => action(name);
 
   return (
-    <div
+    <button
       className={
         name !== current
           ? "sidebar-item"
           : "sidebar-item bg-ctealDark rounded-md"
       }
-      role="button"
-      tabIndex={0}
-      onKeyPress={actionElement}
+      type="button"
       onClick={actionElement}
     >
-      <div className="text-clight text-lg ml-2 hover:text-white">{name}</div>
-    </div>
+      {name}
+    </button>
   );
 }
 
