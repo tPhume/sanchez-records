@@ -9,4 +9,8 @@
   @apply font-mono;
 }
 
+.sidebar-item {
+  @apply flex w-56 h-10 items-center justify-start mt-2
+}
+
 @tailwind utilities;
