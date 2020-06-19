@@ -18,7 +18,8 @@ function App() {
   return (
     <main className="flex h-screen w-screen bg-clight">
       <SideBar>
-        <RickSanchez width="40px" height="40px" className="mt-4 mb-2" />
+        <RickSanchez width="40px" height="40px" className="mt-4 mb-1" />
+        <h1 className="mb-5 text-clight font-medium">Sanchez Records</h1>
         <SideBarItem name={CHARACTER} current={current} action={setCurrent} />
         <SideBarItem name={LOCATION} current={current} action={setCurrent} />
         <SideBarItem name={EPISODE} current={current} action={setCurrent} />

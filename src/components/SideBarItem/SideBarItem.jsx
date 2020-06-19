@@ -7,8 +7,8 @@ function SideBarItem({ name, current, action }) {
     <button
       className={
         name !== current
-          ? "sidebar-item"
-          : "sidebar-item bg-ctealDark rounded-md"
+          ? "sidebar-item hover:bg-ctealMid"
+          : "sidebar-item bg-ctealDark"
       }
       type="button"
       onClick={actionElement}
