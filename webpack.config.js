@@ -21,6 +21,10 @@ module.exports = {
           "postcss-loader",
         ],
       },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
     ],
   },
   resolve: {
