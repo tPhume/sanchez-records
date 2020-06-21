@@ -1,20 +1,42 @@
 import React, { useState, useEffect } from "react";
+import getData from "../../services/api/rest/index";
 
 function Page({ api }) {
-  const [loading, setLoading] = useState(true);
+  // Contains number of pages
+  const [pages, setPages] = useState(-1);
+
+  // Contains the user current page
   const [current, setCurrent] = useState(1);
+
+  // Contains the array of all loaded data for each page
   const [cards, setCards] = useState([]);
 
+  // Indicate fetching of data
+  const [loading, setLoading] = useState(true);
+
+  // Get info once on init
   useEffect(() => {
+    setLoading(true);
+
+    const { info, results } = getData(api, 1);
+    setPages(info.pages);
+    setCards([results]);
+
+    setLoading(false);
+  }, []);
+
+  // Run when switching page
+  useEffect(() => {
+    setLoading(true);
+
     const cur = current;
-    const curCards = cards;
+    const newCards = cards;
 
     // If data has never been fetched before
-    let data;
-    if (!(cur in curCards)) {
-      data = api.getData(current);
-      curCards[cur] = data;
-      setCards();
+    if (!(cur in cards)) {
+      const { results } = getData(api, current);
+      newCards[cur - 1] = results;
+      setCards(newCards);
     }
 
     setLoading(false);
