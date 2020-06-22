@@ -18,9 +18,17 @@ function Page({ api }) {
   useEffect(() => {
     setLoading(true);
 
-    const { info, results } = getData(api, 1);
-    setPages(info.pages);
-    setCards([results]);
+    getData(api, 1)
+      .then((res) => {
+        const { info, results } = res.data;
+
+        setPages(info.pages);
+        setCards([results]);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      });
 
     setLoading(false);
   }, []);
@@ -43,9 +51,13 @@ function Page({ api }) {
   }, [current]);
 
   return (
-    <section className="flex flex-col">
-      <section className="flex">
-        {loading ? <h1>Loading</h1> : <h1>{cards[current]}</h1>}
+    <section className="flex flex-col max-h-full">
+      <section className="flex max-h-full overflow-auto">
+        {loading ? (
+          <h1>Loading</h1>
+        ) : (
+          <h1>{JSON.stringify(cards[current - 1])}</h1>
+        )}
       </section>
       <div>TODO: Choose page here</div>
     </section>
