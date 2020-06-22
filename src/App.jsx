@@ -16,9 +16,9 @@ const EPISODE = "Episode";
 function App() {
   const [current, setCurrent] = useState(CHARACTER);
 
-  const characterPage = (
-    <Page api="https://rickandmortyapi.com/api/character/" />
-  );
+  const cPage = <Page api="https://rickandmortyapi.com/api/character/" />;
+  const lPage = <Page api="https://rickandmortyapi.com/api/location/" />;
+  const ePage = <Page api="https://rickandmortyapi.com/api/episode/" />;
 
   return (
     <main className="flex h-screen w-screen bg-clight">
@@ -29,7 +29,9 @@ function App() {
         <SideBarItem name={LOCATION} current={current} action={setCurrent} />
         <SideBarItem name={EPISODE} current={current} action={setCurrent} />
       </SideBar>
-      {characterPage}
+      {CHARACTER === current && cPage}
+      {LOCATION === current && lPage}
+      {EPISODE === current && ePage}
     </main>
   );
 }
