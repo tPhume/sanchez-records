@@ -63,30 +63,47 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
   const pages = fetchPageNumbers();
   return (
     <>
-      <nav>
+      <nav className="flex flex-row justify-center">
         {pages.map((page) => {
           if (page === LEFT_PAGE)
             return (
               <button
+                className="page-item"
                 type="button"
                 onClick={() => setCurrent(current - neighbours * 2 - 1)}
               >
-                Previous
+                {"<"}
               </button>
             );
 
           if (page === RIGHT_PAGE)
             return (
               <button
+                className="page-item"
                 type="button"
                 onClick={() => setCurrent(current + neighbours * 2 + 1)}
               >
-                Next
+                {">"}
+              </button>
+            );
+
+          if (page === current)
+            return (
+              <button
+                className="page-item bg-cteal text-clight"
+                type="button"
+                onClick={() => setCurrent(page)}
+              >
+                {page}
               </button>
             );
 
           return (
-            <button type="button" onClick={() => setCurrent(page)}>
+            <button
+              className="page-item"
+              type="button"
+              onClick={() => setCurrent(page)}
+            >
               {page}
             </button>
           );
