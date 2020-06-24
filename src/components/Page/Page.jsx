@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Pagination from "../Pagination/Pagination";
 import getData from "../../services/api/rest/index";
 
 function Page({ api }) {
@@ -59,7 +60,11 @@ function Page({ api }) {
           <h1>{JSON.stringify(cards[current - 1])}</h1>
         )}
       </section>
-      <div>TODO: Choose page here</div>
+      <Pagination
+        totalPages={pages}
+        current={current}
+        setCurrent={setCurrent}
+      />
     </section>
   );
 }
