@@ -25,13 +25,12 @@ function Page({ api }) {
 
         setPages(info.pages);
         setCards([results]);
+        setLoading(false);
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.log(err);
       });
-
-    setLoading(false);
   }, []);
 
   // Run when switching page
@@ -42,13 +41,21 @@ function Page({ api }) {
     const newCards = cards;
 
     // If data has never been fetched before
-    if (!(cur in cards)) {
-      const { results } = getData(api, current);
-      newCards[cur - 1] = results;
-      setCards(newCards);
+    if (!(cur - 1 in cards)) {
+      getData(api, cur)
+        .then((res) => {
+          const { results } = res.data;
+          newCards[cur - 1] = results;
+          setCards(newCards);
+          setLoading(false);
+        })
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.log(err);
+        });
+    } else if (cur - 1 in cards) {
+      setLoading(false);
     }
-
-    setLoading(false);
   }, [current]);
 
   return (
