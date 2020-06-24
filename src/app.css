@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 * {
   margin: 0;
@@ -15,5 +14,8 @@
 }
 
 .page-item {
-  @apply rounded-full h-12 w-12 flex items-center justify-center mt-3 mb-3;
+  @apply rounded-full h-12 w-12 flex items-center justify-center mt-3 mb-3 text-cGray;
 }
+
+
+@tailwind utilities;

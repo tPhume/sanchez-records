@@ -59,8 +59,8 @@ function Page({ api }) {
   }, [current]);
 
   return (
-    <section className="flex flex-col max-h-full pl-4 pr-4 w-10/12">
-      <section className="flex max-h-full overflow-auto">
+    <section className="flex flex-col max-h-full w-10/12">
+      <section className="flex max-h-full overflow-auto pl-4 pr-4">
         {loading ? (
           <h1>Loading</h1>
         ) : (

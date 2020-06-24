@@ -6,6 +6,8 @@ import React from "react";
 const LEFT_PAGE = "LEFT";
 const RIGHT_PAGE = "RIGHT";
 
+const STYLE = "page-item hover:bg-cGray hover:text-clight";
+
 // Helper function to create range of number
 function range(from, to, step = 1) {
   const temp = [];
@@ -63,12 +65,12 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
   const pages = fetchPageNumbers();
   return (
     <>
-      <nav className="flex flex-row justify-center">
+      <nav className="flex flex-row justify-center border-solid border-opacity-50 border-cDark shadow-md">
         {pages.map((page) => {
           if (page === LEFT_PAGE)
             return (
               <button
-                className="page-item"
+                className={STYLE}
                 type="button"
                 onClick={() => setCurrent(current - neighbours * 2 - 1)}
               >
@@ -79,7 +81,7 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
           if (page === RIGHT_PAGE)
             return (
               <button
-                className="page-item"
+                className={STYLE}
                 type="button"
                 onClick={() => setCurrent(current + neighbours * 2 + 1)}
               >
@@ -100,7 +102,7 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
 
           return (
             <button
-              className="page-item"
+              className={STYLE}
               type="button"
               onClick={() => setCurrent(page)}
             >
