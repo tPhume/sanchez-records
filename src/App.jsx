@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDom from "react-dom";
 
+import Page from "./components/Page/Page";
 import SideBar from "./components/SideBar/SideBar";
 import SideBarItem from "./components/SideBarItem/SideBarItem";
 
@@ -15,6 +16,10 @@ const EPISODE = "Episode";
 function App() {
   const [current, setCurrent] = useState(CHARACTER);
 
+  const cPage = <Page api="https://rickandmortyapi.com/api/character/" />;
+  const lPage = <Page api="https://rickandmortyapi.com/api/location/" />;
+  const ePage = <Page api="https://rickandmortyapi.com/api/episode/" />;
+
   return (
     <main className="flex h-screen w-screen bg-clight">
       <SideBar>
@@ -24,7 +29,9 @@ function App() {
         <SideBarItem name={LOCATION} current={current} action={setCurrent} />
         <SideBarItem name={EPISODE} current={current} action={setCurrent} />
       </SideBar>
-      <section className="flex bg-clight" />
+      {CHARACTER === current && cPage}
+      {LOCATION === current && lPage}
+      {EPISODE === current && ePage}
     </main>
   );
 }

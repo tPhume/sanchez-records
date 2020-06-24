@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 * {
   margin: 0;
@@ -13,3 +12,10 @@
 .sidebar-item {
   @apply flex w-56 h-10 items-center justify-start mb-2 text-clight text-lg font-semibold p-4 rounded-md;
 }
+
+.page-item {
+  @apply rounded-full h-12 w-12 flex items-center justify-center m-3 text-cGray;
+}
+
+
+@tailwind utilities;
