@@ -17,8 +17,16 @@
   @apply rounded-full h-12 w-12 flex items-center justify-center m-3 text-cGray;
 }
 
-.character-card {
-  @apply border-solid border-2 border-red-600 m-4;
+.card-info {
+  @apply leading-none
+}
+
+.card-info > h3 {
+  @apply text-cGray text-opacity-50
+}
+
+.card-info > h2 {
+  @apply text-cteal
 }
 
 
