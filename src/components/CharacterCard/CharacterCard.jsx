@@ -20,9 +20,18 @@ function CharacterCard({ info, key }) {
           <h3>Species</h3>
           <h2>{info.species}</h2>
         </div>
-        <h3>{info.gender}</h3>
-        <h2>{info.origin.name}</h2>
-        <h2>{info.location.name}</h2>
+        <div className="card-info">
+          <h3>Gender</h3>
+          <h2>{info.gender}</h2>
+        </div>
+        <div className="card-info">
+          <h3>Origin</h3>
+          <h2>{info.origin.name}</h2>
+        </div>
+        <div className="card-info">
+          <h3>Last known location</h3>
+          <h2>{info.location.name}</h2>
+        </div>
       </div>
     </div>
   );

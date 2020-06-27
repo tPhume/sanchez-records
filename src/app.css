@@ -18,7 +18,7 @@
 }
 
 .card-info {
-  @apply leading-none
+  @apply leading-none py-2
 }
 
 .card-info > h3 {
