@@ -17,8 +17,6 @@ function Page({ api, card }) {
 
   // Get info once on init
   useEffect(() => {
-    setLoading(true);
-
     getData(api, 1)
       .then((res) => {
         const { info, results } = res.data;
@@ -35,8 +33,6 @@ function Page({ api, card }) {
 
   // Run when switching page
   useEffect(() => {
-    setLoading(true);
-
     const cur = current;
     const newCards = cards;
 
@@ -58,6 +54,12 @@ function Page({ api, card }) {
     }
   }, [current]);
 
+  // Helper function to force loading state to be true before switching page
+  function switchPage(page) {
+    setLoading(true);
+    setCurrent(page);
+  }
+
   return (
     <section className="flex flex-col max-h-full w-10/12">
       <section className="flex flex-col max-h-full overflow-auto pl-4 pr-4">
@@ -65,14 +67,14 @@ function Page({ api, card }) {
           <h1>Loading</h1>
         ) : (
           cards[current - 1].map((info) => {
-            return card({ info });
+            return card({ info, key: info.id });
           })
         )}
       </section>
       <Pagination
         totalPages={pages}
         current={current}
-        setCurrent={setCurrent}
+        switchPage={switchPage}
       />
     </section>
   );

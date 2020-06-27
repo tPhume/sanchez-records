@@ -18,7 +18,7 @@ function range(from, to, step = 1) {
   return temp;
 }
 
-function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
+function Pagination({ totalPages, current, switchPage, neighbours = 2 }) {
   const fetchPageNumbers = () => {
     const totalNumbers = neighbours * 2 + 3;
     const totalBlocks = totalNumbers + 2;
@@ -72,7 +72,8 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
               <button
                 className={STYLE}
                 type="button"
-                onClick={() => setCurrent(current - neighbours * 2 - 1)}
+                onClick={() => switchPage(current - neighbours * 2 - 1)}
+                key={LEFT_PAGE}
               >
                 {"<"}
               </button>
@@ -83,7 +84,8 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
               <button
                 className={STYLE}
                 type="button"
-                onClick={() => setCurrent(current + neighbours * 2 + 1)}
+                onClick={() => switchPage(current + neighbours * 2 + 1)}
+                key={RIGHT_PAGE}
               >
                 {">"}
               </button>
@@ -94,7 +96,8 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
               <button
                 className="page-item bg-cteal text-clight"
                 type="button"
-                onClick={() => setCurrent(page)}
+                onClick={() => switchPage(page)}
+                key={page}
               >
                 {page}
               </button>
@@ -104,7 +107,8 @@ function Pagination({ totalPages, current, setCurrent, neighbours = 2 }) {
             <button
               className={STYLE}
               type="button"
-              onClick={() => setCurrent(page)}
+              onClick={() => switchPage(page)}
+              key={page}
             >
               {page}
             </button>
