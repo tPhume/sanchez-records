@@ -17,5 +17,17 @@
   @apply rounded-full h-12 w-12 flex items-center justify-center m-3 text-cGray;
 }
 
+.card-info {
+  @apply leading-none py-2
+}
+
+.card-info > h3 {
+  @apply text-cGray text-opacity-50
+}
+
+.card-info > h2 {
+  @apply text-cteal
+}
+
 
 @tailwind utilities;

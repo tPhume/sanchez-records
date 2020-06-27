@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Pagination from "../Pagination/Pagination";
 import getData from "../../services/api/rest/index";
 
-function Page({ api }) {
+function Page({ api, card }) {
   // Contains number of pages
   const [pages, setPages] = useState(-1);
 
@@ -17,8 +17,6 @@ function Page({ api }) {
 
   // Get info once on init
   useEffect(() => {
-    setLoading(true);
-
     getData(api, 1)
       .then((res) => {
         const { info, results } = res.data;
@@ -35,8 +33,6 @@ function Page({ api }) {
 
   // Run when switching page
   useEffect(() => {
-    setLoading(true);
-
     const cur = current;
     const newCards = cards;
 
@@ -58,19 +54,27 @@ function Page({ api }) {
     }
   }, [current]);
 
+  // Helper function to force loading state to be true before switching page
+  function switchPage(page) {
+    setLoading(true);
+    setCurrent(page);
+  }
+
   return (
     <section className="flex flex-col max-h-full w-10/12">
-      <section className="flex max-h-full overflow-auto pl-4 pr-4">
+      <section className="flex flex-wrap justify-center max-h-full overflow-auto pl-4 pr-4">
         {loading ? (
           <h1>Loading</h1>
         ) : (
-          <h1>{JSON.stringify(cards[current - 1])}</h1>
+          cards[current - 1].map((info) => {
+            return card({ info, key: info.id });
+          })
         )}
       </section>
       <Pagination
         totalPages={pages}
         current={current}
-        setCurrent={setCurrent}
+        switchPage={switchPage}
       />
     </section>
   );
