@@ -62,7 +62,7 @@ function Page({ api, card }) {
 
   return (
     <section className="flex flex-col max-h-full w-10/12">
-      <section className="flex flex-wrap max-h-full overflow-auto pl-4 pr-4">
+      <section className="flex flex-wrap justify-center max-h-full overflow-auto pl-4 pr-4">
         {loading ? (
           <h1>Loading</h1>
         ) : (
