@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Pagination from "../Pagination/Pagination";
 import getData from "../../services/api/rest/index";
 
-function Page({ api }) {
+function Page({ api, card }) {
   // Contains number of pages
   const [pages, setPages] = useState(-1);
 
@@ -60,11 +60,13 @@ function Page({ api }) {
 
   return (
     <section className="flex flex-col max-h-full w-10/12">
-      <section className="flex max-h-full overflow-auto pl-4 pr-4">
+      <section className="flex flex-col max-h-full overflow-auto pl-4 pr-4">
         {loading ? (
           <h1>Loading</h1>
         ) : (
-          <h1>{JSON.stringify(cards[current - 1])}</h1>
+          cards[current - 1].map((info) => {
+            return card({ info });
+          })
         )}
       </section>
       <Pagination

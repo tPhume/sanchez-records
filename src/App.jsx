@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDom from "react-dom";
 
 import Page from "./components/Page/Page";
+import CharacterCard from "./components/CharacterCard/CharacterCard";
 import SideBar from "./components/SideBar/SideBar";
 import SideBarItem from "./components/SideBarItem/SideBarItem";
 
@@ -16,7 +17,13 @@ const EPISODE = "Episode";
 function App() {
   const [current, setCurrent] = useState(CHARACTER);
 
-  const cPage = <Page api="https://rickandmortyapi.com/api/character/" />;
+  const cPage = (
+    <Page
+      api="https://rickandmortyapi.com/api/character/"
+      card={CharacterCard}
+    />
+  );
+
   const lPage = <Page api="https://rickandmortyapi.com/api/location/" />;
   const ePage = <Page api="https://rickandmortyapi.com/api/episode/" />;
 
