@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "react/prop-types": 0
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": "detect"
+  }
+}

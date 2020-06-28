@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+
+* {
+  margin: 0;
+}
+
+* {
+  @apply font-mono;
+}
+
+.sidebar-item {
+  @apply flex w-56 h-10 items-center justify-start mb-2 text-clight text-lg font-semibold p-4 rounded-md;
+}
+
+.page-item {
+  @apply rounded-full h-12 w-12 flex items-center justify-center m-3 text-cGray;
+}
+
+.card-info {
+  @apply leading-none py-2
+}
+
+.card-info > h3 {
+  @apply text-cGray text-opacity-50
+}
+
+.card-info > h2 {
+  @apply text-cteal
+}
+
+
+@tailwind utilities;
