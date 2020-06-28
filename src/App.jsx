@@ -7,6 +7,7 @@ import SideBarItem from "./components/SideBarItem/SideBarItem";
 
 import CharacterCard from "./components/CharacterCard/CharacterCard";
 import LocationCard from "./components/LocationCard/LocationCard";
+import EpisodeCard from "./components/EpisodeCard/EpisodeCard";
 
 import RickSanchez from "./Icons/RickSanchez.svg";
 
@@ -30,7 +31,9 @@ function App() {
     <Page api="https://rickandmortyapi.com/api/location/" card={LocationCard} />
   );
 
-  const ePage = <Page api="https://rickandmortyapi.com/api/episode/" />;
+  const ePage = (
+    <Page api="https://rickandmortyapi.com/api/episode/" card={EpisodeCard} />
+  );
 
   return (
     <main className="flex h-screen w-screen bg-clight">
