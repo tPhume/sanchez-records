@@ -1,2 +1,2 @@
 # SANCHEZ RECORDS
-React web application with tailwind css that displays information retrieved from: https://rickandmortyapi.com
+React web application with tailwind css that displays information retrieved from `https://rickandmortyapi.com` The web application isn't responsive and work for screen sizes bigger than ipad because i am lazy and you can do nothing about it. With the exception of SVGR which turns svg into React components, all the React components are built from scratch with tailwind css.
