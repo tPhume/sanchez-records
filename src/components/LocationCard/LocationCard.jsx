@@ -7,7 +7,14 @@ function LocationCard({ info, key }) {
       key={key}
     >
       <div className="py-3 px-5">
-        <h1 className="py-1 text-2xl font-semibold text-cteal">{info.name}</h1>
+        <a
+          href={info.url}
+          target="_blank"
+          rel="noreferrer"
+          className="py-1 text-2xl font-semibold text-cteal hover:text-cGray"
+        >
+          {info.name}
+        </a>
         <div className="card-info">
           <h3>Type</h3>
           <h2>{info.type}</h2>
