@@ -6,3 +6,11 @@ React web application with tailwind css that displays information retrieved from
 Any version of Node greater than 10 should suffice, npm should also be included with Node installation. Simply run `npm install` to get all the dependencies.
 ### `Building with Webpack`
 To build the application, simply use the command `npm run build` which builds the application into a new directory called `dist`. To open the web application, simply use `npm run open`.
+
+![Build and Run](img/npm_run_build.png)
+
+## Preview
+### `Character page`
+![character](img/character.png)
+### `Episode page`
+![episode](img/episode.png)
