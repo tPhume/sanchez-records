@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import ReactDom from "react-dom";
 
 import Page from "./components/Page/Page";
-import CharacterCard from "./components/CharacterCard/CharacterCard";
 import SideBar from "./components/SideBar/SideBar";
 import SideBarItem from "./components/SideBarItem/SideBarItem";
+
+import CharacterCard from "./components/CharacterCard/CharacterCard";
+import LocationCard from "./components/LocationCard/LocationCard";
 
 import RickSanchez from "./Icons/RickSanchez.svg";
 
@@ -24,7 +26,10 @@ function App() {
     />
   );
 
-  const lPage = <Page api="https://rickandmortyapi.com/api/location/" />;
+  const lPage = (
+    <Page api="https://rickandmortyapi.com/api/location/" card={LocationCard} />
+  );
+
   const ePage = <Page api="https://rickandmortyapi.com/api/episode/" />;
 
   return (
